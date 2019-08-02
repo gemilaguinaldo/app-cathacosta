@@ -1,0 +1,110 @@
+/*$grey: #484545;*/
+
+/*fonts*/
+
+.container {
+  width: 100%;
+}
+
+.container .wrapper {
+  margin: auto 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.login-container {
+  height: 100vh;
+  padding: 60px 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-image: linear-gradient(60deg, #64b3f4 0%, #c2e59c 100%);
+}
+
+.login-container .col1 {
+  text-align: right;
+}
+
+.login-container .col1 .login-img {
+  height: 80vh;
+}
+
+.login-container .col2 .card {
+  background: transparent;
+  display: block;
+  width: 20em;
+  height: 40vh;
+  margin: 5em 10em;
+  position: relative;
+  /* card-body */
+}
+
+.login-container .col2 .card .card-body {
+  text-align: center;
+  padding: 20px;
+}
+
+.login-container .col2 .card .card-body .img-logo {
+  width: 13em;
+}
+
+.login-container .col2 .card .card-body .input-container .input-wrapper p,
+.login-container .col2 .card .card-body .input-container .input-wrapper label {
+  color: white;
+  font-weight: 500;
+}
+
+.login-container .col2 .card .card-body .input-container .input-wrapper .input-element {
+  border-radius: unset;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #F5F5F5;
+  border: 1px solid transparent;
+}
+
+.login-container .col2 .card .card-body .input-container .input-wrapper .input-element:focus {
+  outline: none;
+  border: 1px solid #212121;
+}
+
+.login-container .col2 .card .card-body .input-container .input-wrapper .btn-login {
+  width: 100%;
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 992px) {
+  .login-container .col1 {
+    width: 35%;
+    text-align: left;
+  }
+
+  .login-container .col2 {
+    width: 65%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .login-container .col1 {
+    display: none;
+  }
+
+  .login-container .col2 {
+    width: 100%;
+  }
+
+  .login-container .col2 .card {
+    width: auto;
+    margin: -1em 5em;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .login-container .col2 .card {
+    margin: -10em 0em 0em 0em;
+  }
+}
+

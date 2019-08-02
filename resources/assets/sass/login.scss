@@ -1,0 +1,106 @@
+@import 'variables'; 
+
+.container {
+	width: 100%;
+	.wrapper {
+		margin: auto 15px;
+		display: flex;
+	}
+}
+
+.login-container {
+	height: 100vh;
+	padding: 60px 30px;
+	display: flex;
+	flex-direction: column;
+	background-image: linear-gradient(60deg, #64b3f4 0%, #c2e59c 100%);
+	.col1 {
+		text-align: right;
+		.login-img {
+			height: 80vh;
+		}
+	}
+
+	.col2 {
+		.card {
+			background: transparent;
+			display: block;
+			width: 20em;
+			height: 40vh;
+			margin: 5em 10em;
+			position: relative;
+
+			.card-body {
+				text-align: center;
+				padding: 20px;
+				.img-logo {
+					width: 13em;
+				}
+
+
+				.input-container {
+					.input-wrapper {
+						p, label {
+							color: white;
+							font-weight: 500;
+						}
+
+						.input-element {
+							border-radius: unset;
+							background-color: rgba(0,0,0,0.2);
+							color: $light-grey;
+							border: 1px solid transparent; 
+
+							&:focus {
+								outline: none;
+								border: 1px solid $darkest-grey;
+							}
+						}
+
+						.btn-login {
+							width: 100%;
+							margin-top: 20px;
+						}
+					}
+				}
+			}/* card-body */
+		}
+	}
+}
+
+@media only screen and (max-width: 992px) {
+	.login-container {
+		.col1 {
+			width: 35%;
+			text-align: left;
+		}
+		.col2 {
+			width: 65%;
+		}
+	}
+} 
+@media only screen and (max-width: 768px) { 
+	.login-container {
+		.col1 {
+			display: none;
+		}
+		.col2 {
+			width: 100%;
+
+			.card {
+				width: auto;
+				margin: -1em 5em;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 600px) { 
+	.login-container {
+		.col2 {
+			.card {
+				margin: -10em 0em 0em 0em;
+			}
+		}
+	}
+}
