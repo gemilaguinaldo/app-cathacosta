@@ -24,7 +24,7 @@ var bar = {
 				i.removeClass('text-blue');
 				container.removeClass('pl-0');
 			}
-			else 
+			else
 			{
 				// el.addClass('close');
 				// el.css('display', 'none');
@@ -48,7 +48,7 @@ var bar = {
 					el.closest('.sub-menubar').show();
 				}
 			});
-			
+
 		};
 		start();
 	},
@@ -59,12 +59,14 @@ var bar = {
 			// $('.user-dropdown').focusout(focusout);
 
 		},
+
 		dropdown = function() {
 		  	$(this).attr('tabindex', 1).focus();
 			$('.user-dropdown-menu').slideToggle('fast')
 									.toggleClass('active');
 
 		},
+
 		focusout = function() {
 			var dd = $('.user-dropdown-menu');
 			if(dd.hasClass('active')) {
@@ -86,7 +88,7 @@ bar.init();
 var dashboard = {
 	init() {
 		var self = this;
-		
+
 	},
 
 };

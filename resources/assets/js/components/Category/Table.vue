@@ -23,7 +23,7 @@
 						<td>{{ category.category_status }}</td>
 						<td class="text-center">
 							<button class="btn btn-sm btn-amber" @click="openForm('edit', category.id)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-							<button class="btn btn-sm btn-red" @click="openDeleteModal('delete', category.id)" :disabled="category.status == 0"><i class="fa fa-window-close-o" aria-hidden="true"></i></button>
+							<button class="btn btn-sm btn-red" @click="openDeleteModal('delete', category.id)"><i class="fa fa-window-close-o" aria-hidden="true"></i></button>
 						</td>
 					</tr>
 				</tbody>
@@ -75,7 +75,7 @@ export default {
 			.then(res => {
 				let result = res.data.categories;
 				self.categories = result.data;
-				self.makePagination(result);	
+				self.makePagination(result);
 			})
 			.catch(err => console.log(err) );
 		},

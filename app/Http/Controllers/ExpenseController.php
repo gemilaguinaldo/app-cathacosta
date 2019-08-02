@@ -40,16 +40,15 @@ class ExpenseController extends Controller
     {
         $data = $request->except('_token');
         $user = auth()->user();
-        $category = Category::findOrFail($data['category_id']); 
+        $category = Category::findOrFail($data['category_id']);
         $validator = Validator::make($data, [
             'category_id' => 'required|integer',
             'amount' => 'required|regex:/^\d+(\.\d{1,2})?$/',
-            'entry_date' => 'required|date',
         ]);
          if($validator->fails() )
         {
             $result['errors'] = $validator->errors()->all();
-            $result['result'] = false; 
+            $result['result'] = false;
         }
         else
         {
@@ -70,7 +69,7 @@ class ExpenseController extends Controller
      */
     public function show($id)
     {
-        $expense = Expense::findOrFail($id);
+        $expense = Expense::first($id);
         return $expense;
     }
 
@@ -107,7 +106,7 @@ class ExpenseController extends Controller
         if($validator->fails() )
         {
             $result['errors'] = $validator->errors()->all();
-            $result['result'] = false; 
+            $result['result'] = false;
         }
         else
         {
@@ -132,7 +131,7 @@ class ExpenseController extends Controller
         $result ='';
         $update = $expense->update([
             'status' => 0,
-        ]); 
+        ]);
         ($update == true) ? $result = "Expense has been removed!" : $result = "An error occured. Please try again.";
         return $result;
     }

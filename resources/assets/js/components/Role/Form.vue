@@ -8,7 +8,7 @@
 			<form @submit.prevent="submitForm">
 				<div class="modal-body">
 					<div class="alert-fixed error" :class="[{'d-block' : showError}]">
-						<strong><i class="icon fa fa-ban"></i> Check Errors!</strong> 
+						<strong><i class="icon fa fa-ban"></i> Check Errors!</strong>
 						<ul v-for="error in errors">
 							<li>{{ error }}</li>
 						</ul>
@@ -25,7 +25,7 @@
 						<div class="input-wrapper">
 							<p>Description</p>
 							<textarea class="input-element" v-model="role.description" rows="3"></textarea>
-							
+
 						</div>
 						<div class="input-wrapper">
 							<p>Status</p>
@@ -62,7 +62,6 @@ export default {
 			},
 			showError: false,
 			errors: [],
-			role_id: null,
 			buttonSubmit: '',
 		}
 	},
@@ -101,7 +100,7 @@ export default {
 		},
 
 		editRole(id) {
-			fetch(`roles/${id}`) 
+			fetch(`roles/${id}`)
 			.then(res => res.json() )
 			.then(res => {
 				let self = this;
@@ -138,7 +137,7 @@ export default {
 		},
 
 		onClose(e) {
-			if (e.target == this.$el) 
+			if (e.target == this.$el)
 				this.showModal = false;
 		},
 

@@ -10,7 +10,6 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 class AccountCreated extends Mailable
 {
     // use Queueable, SerializesModels;
-    public $account;
     /**
      * Create a new message instance.
      *

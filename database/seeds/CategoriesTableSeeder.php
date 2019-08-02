@@ -11,20 +11,16 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::statement('SET FOREIGN_KEY_CHECKS=0');
-
         $categories = [
         	'Electric Bill',
         	'Water Bill',
         	'Grocery',
         ];
 
-        Category::truncate();
-        foreach ($categories as $key => $value) {
+        foreach ($categories as $value) {
             Category::create([
             	'name' => $value,
             ]);
         }
-        DB::statement('SET FOREIGN_KEY_CHECKS=1');
     }
 }

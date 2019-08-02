@@ -48,7 +48,7 @@ class CategoryController extends Controller
         if($validator->fails() )
         {
             $result['errors'] = $validator->errors()->all();
-            $result['result'] = false; 
+            $result['result'] = false;
         }
         else
         {
@@ -67,7 +67,7 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        $category = Category::findOrFail($id);
+        $category = Category::first($id);
         return $category;
     }
 
@@ -79,7 +79,7 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        
+
     }
 
     /**
@@ -100,7 +100,7 @@ class CategoryController extends Controller
         if($validator->fails() )
         {
             $result['errors'] = $validator->errors()->all();
-            $result['result'] = false; 
+            $result['result'] = false;
         }
         else
         {
@@ -119,21 +119,21 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        $category = Category::findOrFail($id);
+        $category = Category::first($id);
         $result = '';
-       
+
         $update = $category->update([
             'status' => 0
         ]);
         if ($update == true)
             $result = "Expense Category set as inactive";
-        else 
+        else
             $result = "An error occured. Please try again.";
         return $result;
     }
 
     // Fetch data for table
-    public function getCategories() 
+    public function getCategories()
     {
         $data = [
             'categories' => Category::paginate(10),

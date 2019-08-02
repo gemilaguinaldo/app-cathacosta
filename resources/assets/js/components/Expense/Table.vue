@@ -76,9 +76,9 @@ export default {
 			axios.get(page_url)
 			.then(res => {
 				let result = res.data;
-				self.expenses = result.expenses.data;
+				self.expenses = result.expenses;
 				self.categories = result.categories;
-				self.makePagination(result.expenses);	
+				self.makePagination(result.expenses);
 			})
 			.catch(err => console.log(err) );
 		},

@@ -18,9 +18,8 @@ class CreateExpensesTable extends Migration
             $table->integer('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('users')
             ->onUpdate('cascade')->onDelete('cascade');
-            $table->integer('category_id')->unsigned()->nullable();
-            $table->foreign('category_id')->references('id')->on('categories')
-            ->onUpdate('cascade')->onDelete('cascade');
+            $table->integer('category_id')->nullable();
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->float('amount')->default(0);
             $table->date('entry_date');
             $table->text('note')->nullable();

@@ -43,6 +43,7 @@ class PermissionsTableSeeder extends Seeder
         	[4, 1],
         	[4, 2],
         ];
+
         DB::table('permission_role')->truncate();
         foreach ($permission_role as $pr) {
         	DB::table('permission_role')
@@ -51,7 +52,5 @@ class PermissionsTableSeeder extends Seeder
         			'role_id' => $pr[1]
         		]);
         }
-        
-        DB::statement('SET FOREIGN_KEY_CHECKS=1');
     }
 }

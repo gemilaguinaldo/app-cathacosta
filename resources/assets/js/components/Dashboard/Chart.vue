@@ -30,14 +30,11 @@
 <script>
 import { GChart } from 'vue-google-charts';
 export default {
-	components: {
-		GChart
-	},
 	data () {
 		return {
 			chartDataHeader:  ['Category', 'Amount', 'Percentage'],
 			updatedChartData: [],
-			start_date : null,
+			startDate : null,
 			end_date: null,
 			url: '',
 			chartOptions: {
@@ -64,14 +61,14 @@ export default {
 	methods: {
 		fetchData() {
 			let self = this;
-			if(self.start_date == null || self.end_date == null)
+			if(self.startDate == null && self.end_date == null)
 				self.url = '/getExpensesData';
 			else
-				self.url = `/getExpensesData/${self.start_date}/${self.end_date}`;
+				self.url = `/getExpensesData/${self.startDate}/${self.end_date}`;
 			axios.get(self.url)
 			.then(res => {
 				this.updatedChartData = res.data.expenses;
-				this.start_date = res.data.start_date;
+				this.startDate = res.data.startDate;
 				this.end_date = res.data.end_date;
 			})
 			.catch(err => console.log(err) );

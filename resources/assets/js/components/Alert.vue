@@ -4,11 +4,11 @@
 		<div id="alert-container" class="alert-container"></div>
 		<div id="alert-template" class="d-none">
 			<div class="alert-box">
-			  <span class="alert-close" onclick="this.parentElement.style.display='none';">&times;</span> 
+			  <span class="alert-close" onclick="this.parentElement.style.display='none';">&times;</span>
 			  <strong class="strong-msg"></strong> <span class="content-msg"></span>
 			</div>
 		</div>
-	</div>		
+	</div>
 
 </template>
 
@@ -29,8 +29,6 @@
 			    	.fadeOut(8000);
 				container.append(template);
 			}
-
 		}
-
 	}
 </script>

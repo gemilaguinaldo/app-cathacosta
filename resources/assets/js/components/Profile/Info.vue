@@ -9,7 +9,7 @@
 		<form @submit.prevent="submitForm">
 			<div class="card-body" v-if="edit">
 				<div class="alert-fixed error" :class="[{'d-block' : showError}]">
-					<strong><i class="icon fa fa-ban"></i> Check Errors!</strong> 
+					<strong><i class="icon fa fa-ban"></i> Check Errors!</strong>
 					<ul v-for="error in errors">
 						<li>{{ error }}</li>
 					</ul>
@@ -17,15 +17,15 @@
 				<div class="input-container">
 					<div class="input-wrapper">
 						<p>Email</p>
-						<input type="email" class="input-element" v-model="user.email" required autofocus>
+						<input type="email" class="input-element" v-model="email" required autofocus>
 					</div>
 					<div class="input-wrapper">
 						<p>First Name</p>
-						<input type="text" class="input-element" v-model="user.firstname" required>
+						<input type="text" class="input-element" v-model="firstname" required>
 					</div>
 					<div class="input-wrapper">
 						<p>Last Name</p>
-						<input type="text" class="input-element" v-model="user.lastname" required>
+						<input type="text" class="input-element" v-model="lastname" required>
 					</div>
 				</div>
 			</div>
@@ -102,10 +102,6 @@ export default {
 		makeAlert(type, strong, content) {
 			this.$refs.alert.alertNotify(type, strong, content);
 		},
-
-
-
 	}
-
 }
 </script>

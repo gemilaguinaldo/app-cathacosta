@@ -55,7 +55,7 @@ class UserController extends Controller
         if($validator->fails() )
         {
             $result['errors'] = $validator->errors()->all();
-            $result['result'] = false; 
+            $result['result'] = false;
         }
         else
         {
@@ -69,8 +69,8 @@ class UserController extends Controller
             // send email
             $accountData = $save;
             $accountData->password= $password;
-            $send = Mail::to($save->email)->send(new AccountCreated($accountData));
-            
+            Mail::to($save->email)->send(new AccountCreated($accountData));
+
             $result['result'] = true;
         }
         return $result;
@@ -121,7 +121,7 @@ class UserController extends Controller
         if($validator->fails() )
         {
             $result['errors'] = $validator->errors()->all();
-            $result['result'] = false; 
+            $result['result'] = false;
         }
         else
         {
@@ -147,11 +147,11 @@ class UserController extends Controller
         if($user->user_role == 'Admin' || $user->role_id == 1) {
            $result = "This role cannot be removed.";
        }
-       else 
+       else
        {
         $update = $user->update([
             'status' => 0,
-        ]); 
+        ]);
         ($update == true) ? $result = "User deactivated!" : $result = "An error occured. Please try again.";
     }
     return $result;

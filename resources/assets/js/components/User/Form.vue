@@ -9,7 +9,7 @@
 
 				<div class="modal-body">
 					<div class="alert-fixed error" :class="[{'d-block' : showError}]">
-						<strong><i class="icon fa fa-ban"></i> Check Errors!</strong> 
+						<strong><i class="icon fa fa-ban"></i> Check Errors!</strong>
 						<ul v-for="error in errors">
 							<li>{{ error }}</li>
 						</ul>
@@ -64,7 +64,7 @@ export default {
 				email: '',
 				firstname: '',
 				lastname: '',
-				status: 1,
+				status: '',
 				role_id: '',
 			},
 			showError: false,
@@ -113,7 +113,7 @@ export default {
 		},
 
 		editUser(id) {
-			fetch(`users/${id}`) 
+			fetch(`users/${id}`)
 			.then(res => res.json() )
 			.then(res => {
 				let self = this;
@@ -150,7 +150,7 @@ export default {
 		},
 
 		onClose(e) {
-			if (e.target == this.$el) 
+			if (e.target == this.$el)
 				this.showModal = false;
 		},
 

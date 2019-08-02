@@ -27,9 +27,7 @@
   <!-- END MODAL -->
 </template>
 
-
 <script>
-  
   export default {
     data() {
       return {
@@ -39,7 +37,7 @@
         title: '',
         content: '',
         buttonType: '', //okCancel, yesNo,
-        showModal : false,
+        showModal : '',
 
       }
     },
@@ -49,7 +47,7 @@
     },
 
     methods: {
-      init(id = '', url = '', type, title, content, buttonType) { 
+      init(id = '', url = '', type, title, content, buttonType) {
         let self = this;
         self.id = id;
         self.url = url;
@@ -61,18 +59,8 @@
       },
 
       onClose(e) {
-        if (e.target == this.$el) 
+        if (e.target == this.$el)
           this.showModal = false;
-      },
-
-      clear() {
-        let self = this;
-        self.id = '';
-        self.url = '';
-        self.type = '';
-        self.title = '';
-        self.content = '';
-        self.buttonType = '';
       },
 
       submitForm() {
@@ -86,17 +74,13 @@
       delete() {
         let self = this;
         self.showModal = false;
-        axios.delete(self.url)
+        axios.delete(self.urrl)
         .then(data => {
           self.$parent.makeAlert('success', '', data.data);
           self.$parent.fetchData();
         })
         .catch(err => console.log(err) );
       },
-
-
     },
-
-
   }
 </script>

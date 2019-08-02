@@ -9,25 +9,6 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-   protected $fillable = [
-        'firstname', 
-        'lastname', 
-        'email', 
-        'password',
-        // 'role_id',
-        'status',
-    ];
-
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
     protected $hidden = [
         'password', 'remember_token',
     ];
@@ -51,7 +32,7 @@ class User extends Authenticatable
     }
 
     // Attributes
-    public function getUserRoleAttribute() 
+    public function getUserRoleAttribute()
     {
         return $this->role->display_name;
     }
@@ -65,10 +46,10 @@ class User extends Authenticatable
     {
         switch ($this->status) {
             case 0:
-              $status = 'Inactive';  
+              $status = 'Inactive';
                 break;
             case 1:
-              $status = 'Active';  
+              $status = 'Active';
                 break;
             default:
                $status = 'Active';
@@ -78,9 +59,8 @@ class User extends Authenticatable
     }
 
     public function getIsAdminAttribute()
-    { 
+    {
         ($this->role->name == 'Administrator') ? $isAdmin = true : $isAdmin = false;
         return $isAdmin;
     }
-
 }

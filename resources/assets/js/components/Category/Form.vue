@@ -8,7 +8,7 @@
 			<form @submit.prevent="submitForm">
 				<div class="modal-body">
 					<div class="alert-fixed error" :class="[{'d-block' : showError}]">
-						<strong><i class="icon fa fa-ban"></i> Check Errors!</strong> 
+						<strong><i class="icon fa fa-ban"></i> Check Errors!</strong>
 						<ul v-for="error in errors">
 							<li>{{ error }}</li>
 						</ul>
@@ -96,7 +96,7 @@ export default {
 		},
 
 		editCategory(id) {
-			fetch(`expense-categories/${id}`) 
+			fetch(`expense-categories/${id}`)
 			.then(res => res.json() )
 			.then(res => {
 				let self = this;
@@ -116,7 +116,7 @@ export default {
 			.then(data => {
 				console.log(data);
 				let res = data.data;
-				if(res.result)
+				if(!res.result)
 				{
 					self.clearForm();
 					self.showModal = false;
@@ -134,7 +134,7 @@ export default {
 		},
 
 		onClose(e) {
-			if (e.target == this.$el) 
+			if (e.target == this.$el)
 				this.showModal = false;
 		},
 
@@ -152,7 +152,7 @@ export default {
 		},
 
 		submitForm() {
-			(this.edit == true) ? this.updateCategory(this.category_id) : this.storeCategory();
+			(this.edit == true) ?  this.storeCategory() : this.updateCategory(this.category_id);
 		},
 
 

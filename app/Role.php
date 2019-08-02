@@ -33,10 +33,10 @@ class Role extends Model
     {
         switch ($this->status) {
             case 0:
-              $status = 'Inactive';  
+              $status = 'Inactive';
                 break;
             case 1:
-              $status = 'Active';  
+              $status = 'Active';
                 break;
             default:
                $status = 'Active';
@@ -44,5 +44,4 @@ class Role extends Model
         }
         return $status;
     }
-    
 }

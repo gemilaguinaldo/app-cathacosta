@@ -32,26 +32,6 @@ class RolesTableSeeder extends Seeder
             Role::create($value);
         }
 
-      // $role_user = [
-	    // 	[
-	    // 		'1',
-	    // 		'1',
-	    // 	],
-	    // 	[
-	    // 		'2',
-	    // 		'2',
-	    // 	],
-	    // ];
-
-     //  DB::table('role_user')->truncate();
-	    // foreach ($role_user as $ru ) {
-	    //     DB::table('role_user')
-	    //       ->insert([
-	    //         'user_id' => $ru[0],
-	    //         'role_id' => $ru[1]
-	    //       ]);
-	    // }
-
         DB::statement('SET FOREIGN_KEY_CHECKS=1');
 
     }

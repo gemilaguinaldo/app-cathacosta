@@ -20,7 +20,7 @@ class Category extends Model
     // Relation
     public function expenses()
     {
-        return $this->hasMany(Expense::class);
+        return $this->hasOne(Expense::class);
     }
 
     // Attributes
@@ -28,10 +28,10 @@ class Category extends Model
     {
         switch ($this->status) {
             case 0:
-              $status = 'Inactive';  
+              $status = 'Inactive';
                 break;
             case 1:
-              $status = 'Active';  
+              $status = 'Active';
                 break;
             default:
                $status = 'Active';

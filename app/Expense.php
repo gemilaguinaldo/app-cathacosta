@@ -25,22 +25,22 @@ class Expense extends Model
 
     public function user() {
     	return $this->belongsTo(User::class);
-    } 
+    }
 
     // Attributes
     public function getCategoryNameAttribute()
     {
-    	return $this->category->name;
+    	  return $this->categories->name;
     }
 
     public function getExpenseStatusAttribute()
     {
         switch ($this->status) {
             case 0:
-              $status = 'Inactive';  
+              $status = 'Inactive';
                 break;
             case 1:
-              $status = 'Active';  
+              $status = 'Active';
                 break;
             default:
                $status = 'Active';
@@ -48,5 +48,4 @@ class Expense extends Model
         }
         return $status;
     }
-
 }
